@@ -49,3 +49,4 @@ void swap_nodes(listint_t **head, listint_t *node1, listint_t *node2)
 
 	node2->prev = node1->prev;
 	node1->prev = node2;
+}
