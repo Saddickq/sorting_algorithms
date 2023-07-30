@@ -15,13 +15,14 @@ void cocktail_sort_list(listint_t **list)
 	temp = *list;
 	do {
 		no_swaps = 1;
-		for (; temp->next != hi; temp = temp->next)
+		while (temp->next != hi)
 		{
 			if (temp->n > temp->next->n)
 			{
 				swap(temp, list, &no_swaps);
 				continue;
 			}
+			temp = temp->next;
 		}
 		if (no_swaps)
 			break;
