@@ -7,35 +7,34 @@
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *hi = NULL, *lo = NULL, *temp = *list;
+	listint_t *hi = NULL, *lo = NULL, *temp;
 	int no_swaps;
 
-	if (*list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
+	temp = *list;
 	do {
 		no_swaps = 1;
-		while (temp->next != hi)
+		for (; temp->next != hi; temp = temp->next)
 		{
 			if (temp->n > temp->next->n)
 			{
 				swap(temp, list, &no_swaps);
 				continue;
 			}
-			temp = temp->next;
 		}
 		if (no_swaps)
 			break;
 		hi = temp;
 		temp = temp->prev;
 		no_swaps = 1;
-		while (temp->prev != lo)
+		for (; temp->prev != lo; temp = temp->prev)
 		{
 			if (temp->n > temp->next->n)
 			{
 				swap(temp, list, &no_swaps);
 				temp = temp->prev;
 			}
-			temp = temp->prev;
 		}
 		if (temp->n > temp->next->n)
 		{
