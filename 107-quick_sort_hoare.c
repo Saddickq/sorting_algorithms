@@ -53,7 +53,7 @@ int h_partition(int *array, int lo, int hi, size_t size)
 		while (array[lo] < pivot)
 			lo++;
 
-		while(array[hi] > pivot)
+		while (array[hi] > pivot)
 			hi--;
 
 		if (lo >= hi)
